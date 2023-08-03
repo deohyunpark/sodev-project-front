@@ -19,18 +19,20 @@ function Login() {
         password: inputPw,
       })
       .then((res) => {
-        if (res.data === "EMAIL_NOT_FOUNDED") {
-          // id 일치하지 않는 경우 userId = undefined, msg = '입력하신 id 가 일치하지 않습니다.'
-
-          alert("존재하지 않는 이메일입니다.");
-        } else if (res.data === "PASSWORD_NOT_EQUAL") {
+        console.log(res.data)
+        if (res.data.resultCode === "SUCCESS") {
+          alert("ㅅㅂ카");
+        } else if (res.data.resultCode !== "SUCCESS") {
           alert("비밀번호가 일치하지 않습니다.");
         } else if (res.headers.auth === "[ROLE_MEMBER]") {
           console.log("======================", res.headers.auth);
           document.location.href = "/";
         }
       })
-      .catch();
+      .catch((error)=> {
+        console.log(error.response.data);
+        alert(error.response.data.data.password)
+      });
   };
   return (
     <Fragment>

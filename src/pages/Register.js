@@ -117,7 +117,7 @@ function Register() {
         console.log(res.data.result);
         if (res.data.resultCode === "SUCCESS") {
           alert("회원가입이 완료되었습니다.");
-          document.location.href = "/";
+          document.location.href = "/login";
         }
       })
       .catch((error) => {
