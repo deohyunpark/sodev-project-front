@@ -29,10 +29,10 @@ function Register() {
 
     if (!idRegExp.test(currentId)) {
       setIdMessage("아이디는 이메일 형식만 가능합니다.");
-      setIsId(false);
+      // setIsId(false);
     } else {
       setIdMessage("");
-      setIsId(true);
+      // setIsId(true);
     }
   };
   const onChangeName = (e) => {
@@ -41,10 +41,10 @@ function Register() {
 
     if (currentName.length < 2 || currentName.length > 16) {
       setNameMessage("닉네임은 2글자 이상 16글자 이하로 입력해주세요.");
-      setIsName(false);
+      // setIsName(false);
     } else {
       setNameMessage("");
-      setIsName(true);
+      // setIsName(true);
     }
   };
 
@@ -55,10 +55,10 @@ function Register() {
       /^(?=.*[a-zA-Z])(?=.*[!@#$%^*+=-])(?=.*[0-9]).{8,25}$/;
     if (!passwordRegExp.test(currentPassword)) {
       setPasswordMessage("영문,숫자,특수기호 포함 6자리 이상이어야 합니다.");
-      setIsPassword(false);
+      // setIsPassword(false);
     } else {
       setPasswordMessage("");
-      setIsPassword(true);
+      // setIsPassword(true);
     }
   };
   const onChangePasswordConfirm = (e) => {
@@ -66,10 +66,10 @@ function Register() {
     setInputPwCheck(currentPasswordConfirm);
     if (inputPw !== currentPasswordConfirm) {
       setPasswordConfirmMessage("비밀번호가 일치하지 않습니다.");
-      setIsPasswordConfirm(false);
+      // setIsPasswordConfirm(false);
     } else {
       setPasswordConfirmMessage("");
-      setIsPasswordConfirm(true);
+      // setIsPasswordConfirm(true);
     }
   };
 
