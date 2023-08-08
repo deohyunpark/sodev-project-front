@@ -19,6 +19,9 @@ jobs:
           restore-keys: |
             ${{ runner.OS }}-build-
             ${{ runner.OS }}-
+
+      - name: Nvm use 16
+        run: nvm use 16
     
       - name: Install Dependencies    # 의존 파일 설치
         run: npm install
