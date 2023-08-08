@@ -6,7 +6,7 @@ files:
     destination: /home/ubuntu/sodev-project-front
     overwrite: yes
 permissions:
-  - object: /
+  - object: /home/ubuntu/sodev-project-front
     pattern: "**"
     owner: ubuntu
     group: ubuntu
