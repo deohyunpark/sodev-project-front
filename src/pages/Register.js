@@ -15,10 +15,10 @@ function Register() {
   const [passwordConfirmMessage, setPasswordConfirmMessage] = useState("");
 
   // 유효성 검사
-  const [isId, setIsId] = useState(false);
-  const [isname, setIsName] = useState(false);
-  const [isPassword, setIsPassword] = useState(false);
-  const [isPasswordConfirm, setIsPasswordConfirm] = useState(false);
+  // const [isId, setIsId] = useState(false);
+  // const [isname, setIsName] = useState(false);
+  // const [isPassword, setIsPassword] = useState(false);
+  // const [isPasswordConfirm, setIsPasswordConfirm] = useState(false);
 
   // 유효성 검사 메서드
   const onChangeId = (e) => {
