@@ -37,6 +37,10 @@ jobs:
       - name: Build
         run: npm run build
 
+      - name: Make zip file # 빌드된 파일을 그 자체로 올려도 되지만, 하나의 zip 파일로 압축시켜 올리는게 더 편리하기 떄문에 압축
+        run: zip -r ./$GITHUB_SHA . # $GITHUB_SHA -> 중복되지 않는 일종의 해시값 같은 것
+        shell: bash
+
       - name: Configure AWS credentials
         uses: aws-actions/configure-aws-credentials@v1
         with:
