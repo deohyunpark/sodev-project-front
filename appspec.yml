@@ -1,17 +1,17 @@
 version: 0.0
-os: linux
+os: linux # Ubuntu -> linux.
 
 files:
   - source: /
-    destination: /home/ubuntu/sodev-project-front
+    destination: /home/ubuntu/front # EC2 인스턴스 안에 프로젝트를 저장할 경로.
     overwrite: yes
-permissions:
-  - object: /
+permissions: # EC2 인스턴스에 프로젝트를 저장하기 위한 권한 설정.
+  - object: /home/ubuntu/front # EC2 인스턴스 안에 프로젝트를 저장할 경로.
     pattern: "**"
     owner: ubuntu
     group: ubuntu
 hooks:
-  AfterInstall:
+  AfterInstall: # AfterInstall 즉, 배포 완료 후 실행할 동작 설정.
     - location: deploy.sh
-      timeout: 60
-      runas: root
+      timeout: 120 # 제한 시간 1000초 으로 설정. 1000초가 넘어가면 실패함.
+      runas: root # run as root 즉, root 권한으로 실행.
